@@ -22,40 +22,54 @@ struct GameOverView: View {
     var body: some View {
         
         HStack {
-        
-            VStack(alignment: .center) {
-                
-                Text("GAME OVER")
-                    .bold()
-                    .padding(.top, 100)
-                Spacer()
-                
-                Button {
-                    withAnimation { self.backToMainScreen() }
-                } label: {
-                    Image(systemName: "arrow.backward")
+            ZStack {
+                VStack(alignment: .center) {
                     
-                        .foregroundColor(.black)
-                        .font(.title)
+                    
+                  
+                    
+                    
+                    Text("GAME OVER")
+                        .bold()
+                        .foregroundStyle(Color.white)
+                        .background(Image("Button06").frame(width: 100, height: 100, alignment: .center))
+                        .padding(.top, 200)
+                    
+                    Spacer()
+                    
+                    Button {
+                        withAnimation { self.restartGame() }
+                    } label: {
+                        Text("Retry")
+                            .foregroundColor(.white)
+                            .font(.subheadline)
+                        
+                            .background(Image("Button03").frame(width: 100, height: 100, alignment: .center))
+                    }
+                    
+                    Button {
+                        withAnimation { self.backToMainScreen() }
+                    } label: {
+                        Text("Main Menu")
+                        
+                            .foregroundColor(.white)
+                            .font(.subheadline)
+                        
+                            .background(Image("Button03")).frame(width: 100, height: 100, alignment: .center)
+                    }
+                    
+                    .padding()
+                    Spacer()
+                    
                 }
-                .background(Circle().foregroundColor(Color(uiColor: UIColor.systemGray6)).frame(width: 100, height: 100, alignment: .center))
-                
-                Spacer()
-                
-                Button {
-                    withAnimation { self.restartGame() }
-                } label: {
-                    Image(systemName: "arrow.clockwise")
-                        .foregroundColor(.black)
-                        .font(.title)
-                }
-                .background(Circle().foregroundColor(Color(uiColor: UIColor.systemGray6)).frame(width: 100, height: 100, alignment: .center))
-                
-                Spacer()
+                .navigationBarHidden(true)
             }
-            .navigationBarHidden(true)
+            .background(Image("MessageBox04"))
+            .padding(.top, 50)
+            
+            
         }
-     
+        
         .statusBar(hidden: true)
     }
     
