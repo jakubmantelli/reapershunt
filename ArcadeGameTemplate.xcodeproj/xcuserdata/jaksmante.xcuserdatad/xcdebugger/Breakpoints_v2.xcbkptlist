@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "327A3E59-CD2D-4225-898D-E8B1721B25C1"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F2AC0B9-D76D-4BCA-81E5-049BEE3CFC43"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArcadeGameTemplate/Game/ExtensionsAGS/SoulsMovement.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "addSoulToScene()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7F2AC0B9-D76D-4BCA-81E5-049BEE3CFC43 - a9418dd4168ad82a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ArcadeGameTemplate.ArcadeGameScene.addSoulToScene() -&gt; ()"
+                  moduleName = "ArcadeGameTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaksmante/Documents/GitHub/reaper-arcade/ArcadeGameTemplate/Game/ExtensionsAGS/SoulsMovement.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "356">
+               </Location>
+               <Location
+                  uuid = "7F2AC0B9-D76D-4BCA-81E5-049BEE3CFC43 - a9418dd4168ad82a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ArcadeGameTemplate.ArcadeGameScene.addSoulToScene() -&gt; ()"
+                  moduleName = "ArcadeGameTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaksmante/Documents/GitHub/reaper-arcade/ArcadeGameTemplate/Game/ExtensionsAGS/SoulsMovement.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "376">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
