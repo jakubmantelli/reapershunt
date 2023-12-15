@@ -51,24 +51,32 @@ struct ArcadeGameView: View {
                 .frame(width: screenWidth, height: screenHeight)
                 .statusBar(hidden: true)
                 .ignoresSafeArea()
-            HStack() {
-             
+            
+            
+        
                 
-                Spacer()
+                
                 
                 /**
                  * UI element showing the current score of the player.
                  * Remove it if your game is not based on scoring points.
                  */
                 GameScoreView(score: $gameLogic.currentScore)
-            }
+            
+       
+            
           
             if gameLogic.isGameOver {
                 GameOverView(currentGameState: $currentGameState)
             }
             
         }
-      
+        
+        
+         
+ 
+
+    
         .navigationBarHidden(true)
         
         .onChange(of: gameLogic.isGameOver) { _ in

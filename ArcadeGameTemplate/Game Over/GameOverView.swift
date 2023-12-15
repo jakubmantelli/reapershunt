@@ -21,13 +21,11 @@ struct GameOverView: View {
     
     var body: some View {
         
-        ZStack {
-            Color.white
-                .opacity(1)
-                .ignoresSafeArea()
+        HStack {
+        
             VStack(alignment: .center) {
                 
-                Text("GAME OVER bozo")
+                Text("GAME OVER")
                     .bold()
                     .padding(.top, 100)
                 Spacer()

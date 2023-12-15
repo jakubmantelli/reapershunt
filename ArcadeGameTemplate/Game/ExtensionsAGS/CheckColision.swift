@@ -53,6 +53,7 @@ extension ArcadeGameScene {
             enemy.removeAllActions()
             enemy.run(deadAnimationR) {
                 enemy.removeFromParent()
+                ArcadeGameLogic.shared.currentScore += 1
             }
             
             

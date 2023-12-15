@@ -16,14 +16,23 @@ struct GameScoreView: View {
     @Binding var score: Int
     
     var body: some View {
-            
-       
+        ZStack {
             Text("\(score)")
                 .foregroundColor(.red)
+                .bold()
+                .background(Image("Counter - Panel")
+                    .resizable()
+                    .frame(width:300, height: 65)
+              
+                    )
                 
+                .padding(.top, 90)
+           
             
+            
+            
+        }
         
-       
         
     }
     
