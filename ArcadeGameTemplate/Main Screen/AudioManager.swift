@@ -21,6 +21,7 @@ class AudioManager: ObservableObject {
                 playMenuMusic()
             } else {
                 stopMusic()
+                backgroundMusicPlayer?.volume = 0
             }
         }
     }
@@ -64,8 +65,9 @@ class AudioManager: ObservableObject {
     }
     
     func stopMusic() {
-        menuMusicPlayer?.stop()
-        backgroundMusicPlayer?.stop()
+        menuMusicPlayer?.volume = 0
+        backgroundMusicPlayer?.volume = 0
+        
     }
 }
 

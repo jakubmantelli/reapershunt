@@ -46,14 +46,21 @@ struct MainScreenView: View {
                 
                 
                 VStack(alignment: .center) {
-                    Spacer()
+                   
                     
-                 
+                      Spacer(minLength: 280)
  // Play Button
                     
                     
                     Button {
                         withAnimation { self.startGame() }
+                        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+                        audioManager.stopMusic()
+                    
+                        
+                    
+                        
+                       
                     } label: {
                         Text("")
                             .foregroundColor(.white)
@@ -71,6 +78,7 @@ struct MainScreenView: View {
                     
                     Button {
                         showingTut.toggle()
+                        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
                         
                     } label: {
                         Text("")
@@ -94,6 +102,7 @@ struct MainScreenView: View {
  // Credits button
                     Button {
                         showingCred.toggle()
+                        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
                     } label: {
                         Text("")
                            
@@ -113,6 +122,7 @@ struct MainScreenView: View {
                     Button {
                         // Toggle the music on/off
                         audioManager.isMusicPlaying.toggle()
+                        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
                     } label: {
                         Text("")
                             .background(

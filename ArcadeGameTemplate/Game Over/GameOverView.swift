@@ -39,6 +39,7 @@ struct GameOverView: View {
                     
                     Button {
                         withAnimation { self.restartGame() }
+                        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
                     } label: {
                         Text("")
                             .foregroundColor(.white)
@@ -53,6 +54,7 @@ struct GameOverView: View {
                     
                     Button {
                         withAnimation { self.backToMainScreen() }
+                        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
                     } label: {
                         Text("")
                         
