@@ -20,13 +20,15 @@ struct MainScreenView: View {
     @Binding var currentGameState: GameState
     @State private var showingTut = false
     @State private var showingCred = false
+    @ObservedObject private var audioManager = AudioManager.shared
+
+    
    
    
     // Change it on the Constants.swift file
     let accentColor: Color = MainScreenProperties.accentColor
     
     @State var menuMusicPlayer: AVAudioPlayer?
-    
  
     var body: some View {
         
@@ -44,6 +46,7 @@ struct MainScreenView: View {
                 
                 
                 VStack(alignment: .center) {
+                    Spacer()
                     
                  
  // Play Button
@@ -107,6 +110,26 @@ struct MainScreenView: View {
                   
                     .padding(.top, 10)
                     
+                    Button {
+                        // Toggle the music on/off
+                        audioManager.isMusicPlaying.toggle()
+                    } label: {
+                        Text("")
+                            .background(
+                                Image(audioManager.isMusicPlaying ? "Reaper's Hunt Home - Volume On BTN" : "Reaper's Hunt Home - Volume Off BTN")
+                                    .resizable()
+                                    .frame(width: 63, height: 63)
+                            )
+                            .frame(width: 63, height: 63, alignment: .center)
+                            .padding(.top, 10)
+                    }
+                    .onAppear {
+                        // Call the playMenuMusic() when the view appears
+                        audioManager.playMenuMusic()
+                    }
+                    
+                    Spacer()
+
                   /*  Button {
                         menuMusicPlayer?.stop()
                  
@@ -124,10 +147,10 @@ struct MainScreenView: View {
                     }
                    
                  */
-                        .onAppear {
-                                        //call music func
-                                        playMenuMusic()
-                                    }
+//                        .onAppear {
+//                                        //call music func
+//                                        playMenuMusic()
+//                                    }
                         
     
                         
