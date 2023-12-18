@@ -25,7 +25,9 @@ struct ContentView: View {
         switch currentGameState {
         case .mainScreen:
             MainScreenView(currentGameState: $currentGameState)
+            
                 .environmentObject(gameLogic)
+        
             
         case .playing:
             ArcadeGameView(currentGameState: $currentGameState)

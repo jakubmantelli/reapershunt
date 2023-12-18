@@ -5,40 +5,58 @@
 
 import SpriteKit
 import SwiftUI
-
+import AVFoundation
 class ArcadeGameScene: SKScene {
+    
    
+    
+
+    var gameState: GameState = .playing
     
     // healthbar
     private var healthBar: HealthBar!
     
-    // Nodo del jugador.
+    // player node
     var skeleton: SKSpriteNode!
-    // Creamos el joystick.
+    // joystick node
     var virtualJoystick: VirtualJoystick?
-    // Nodo de la cámara.
+    // camera node
     let cam = SKCameraNode()
+    
+    // game music
+    var backgroundMusicPlayer: AVAudioPlayer?
+    
+   
+    
     
     // Dimensiones originales del mapa
     var originalMapWidth: CGFloat = 1500
     var originalMapHeight: CGFloat = 986
     // Factor de escala aplicado al mapa
-    var mapScaleFactor: CGFloat = 2.0 
+    var mapScaleFactor: CGFloat = 2.0
     // Dimensiones finales
     var scaledWidth: CGFloat { originalMapWidth * mapScaleFactor }
     var scaledHeight: CGFloat { originalMapHeight * mapScaleFactor }
-    var randomDirectionForSoul: CGVector?
+    var randomDirectionsForSouls: [String: CGVector] = [:]
     
-    
+
     
     override func didMove(to view: SKView) {
+        
+   
+        
+        
+        //music
+        playBackgroundMusic()
+        
+        
         self.camera = cam
     
         // Set the scale mode to scale to fit the window
         self.scaleMode = .aspectFill
         
         // Creamos el mapa, centrado en la escena.
-        let map = SKSpriteNode(imageNamed: "Dungeon_Map")
+        let map = SKSpriteNode(imageNamed: "Dungeon_Mapv2")
         map.position = CGPoint(x: -scaledWidth/2, y: -scaledHeight/2)
         map.zPosition = -2
         map.setScale(mapScaleFactor)
@@ -175,6 +193,7 @@ class ArcadeGameScene: SKScene {
         }
     
     
+    
     func skeletonPosLimit(pos:CGFloat,axis:String) -> CGFloat{
         if axis == "x"{
                     if pos < -1290 {return -1290}
@@ -190,16 +209,19 @@ class ArcadeGameScene: SKScene {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("Touches began")
-        virtualJoystick = VirtualJoystick()
-        addChild(virtualJoystick!)
         
-        // Pass touch events to the virtual joystick
-        virtualJoystick?.touchesBegan(touches, with: event)
-        if let touch = touches.first {
-            virtualJoystick?.position = CGPoint(x:(skeletonPosLimit(pos:skeleton.position.x,axis:"x") - (self.frame.width/2) + touch.location(in:self.cam).x),y:(skeletonPosLimit(pos:skeleton.position.y,axis:"y")  + (self.frame.height/2) - touch.location(in:self.cam).y))
-        }
-    }
+            print("Touches began")
+            virtualJoystick = VirtualJoystick()
+            addChild(virtualJoystick!)
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+            // Pass touch events to the virtual joystick
+            virtualJoystick?.touchesBegan(touches, with: event)
+            if let touch = touches.first {
+                virtualJoystick?.position = CGPoint(x:(skeletonPosLimit(pos:skeleton.position.x,axis:"x") - (self.frame.width/2) + touch.location(in:self.cam).x),y:(skeletonPosLimit(pos:skeleton.position.y,axis:"y")  + (self.frame.height/2) - touch.location(in:self.cam).y))
+                    
+                addSoulToScene()
+            }
+            }
     
    
     
@@ -208,7 +230,7 @@ class ArcadeGameScene: SKScene {
         virtualJoystick?.touchesMoved(touches, with: event)
         startWalkingAnimation() // func that I wrote to organize the animation
         //Vitor testing with animation
-
+   
     }
     
     
@@ -219,53 +241,55 @@ class ArcadeGameScene: SKScene {
         virtualJoystick?.removeFromParent()
         virtualJoystick = nil
         virtualJoystick?.touchesEnded(touches, with: event)
-        addSoulToScene()
+     
  
         
     }
     
     
     override func update(_ currentTime: TimeInterval) {
-        //check for colisions
-        checkColision()
-        // It moves the soul automatically.
-        moveSoulAwayFromPlayer()
-        if let joystick = virtualJoystick {
-            let joystickDelta = joystick.getJoystickDelta()
-            let (isAtHorizontalEdge, isAtVerticalEdge) = updatePlayerPosition(with: joystickDelta)
-            let speed: CGFloat = 3.0
-
-
-            // Mover el joystick solo en la dirección permitida
-
-
-            // Ajuste de la posición de la cámara
-            if (skeleton.position.x > -1290 && skeleton.position.x < 1290){
-                            cam.position.x = skeleton.position.x
-                            if !isAtHorizontalEdge {
-                                virtualJoystick?.position.x += joystickDelta.x * speed
-                            }
-                        }
-                        if (skeleton.position.y > -560 && skeleton.position.y < 555){
-                            cam.position.y = skeleton.position.y
-                            if !isAtVerticalEdge {
-                                virtualJoystick?.position.y += joystickDelta.y * speed
-                            }
-                        }
-            // fix healthbar to player
-            healthBar.position.x = skeleton.position.x
-            healthBar.position.y = skeleton.position.y 
         
-            
-        }
-    //keeps healthbar updated
-        updateHealthBar()
+    
+            //check for colisions
+            checkColision()
+            // It moves the soul automatically.
+            moveSoulAwayFromPlayer()
+            if let joystick = virtualJoystick {
+                let joystickDelta = joystick.getJoystickDelta()
+                let (isAtHorizontalEdge, isAtVerticalEdge) = updatePlayerPosition(with: joystickDelta)
+                let speed: CGFloat = 3.0
+                
+                
+                // Mover el joystick solo en la dirección permitida
+                
+                
+                // Ajuste de la posición de la cámara
+                if (skeleton.position.x > -1290 && skeleton.position.x < 1290){
+                    cam.position.x = skeleton.position.x
+                    if !isAtHorizontalEdge {
+                        virtualJoystick?.position.x += joystickDelta.x * speed
+                    }
+                }
+                if (skeleton.position.y > -560 && skeleton.position.y < 555){
+                    cam.position.y = skeleton.position.y
+                    if !isAtVerticalEdge {
+                        virtualJoystick?.position.y += joystickDelta.y * speed
+                    }
+                }
+                // fix healthbar to player
+                healthBar.position.x = skeleton.position.x
+                healthBar.position.y = skeleton.position.y
+                
+                
+            }
+            //keeps healthbar updated
+            updateHealthBar()
+        
         
         
     }
-    
-  
-    
+
+ 
     
     
     /**
@@ -305,6 +329,3 @@ class ArcadeGameScene: SKScene {
      }*/
     
 }
-
-
-

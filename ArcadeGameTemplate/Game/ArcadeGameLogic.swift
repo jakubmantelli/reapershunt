@@ -15,8 +15,19 @@ class ArcadeGameLogic: ObservableObject {
     // Player's health
     var playerHealth: Int = 20
     private var healthTimer: Timer?
-    
     @Published var isGameOver: Bool = false
+    
+    @Published var highScore: Int {
+           didSet {
+               UserDefaults.standard.set(highScore, forKey: "HighScore")
+           }
+       }
+    
+
+    
+    init() {
+          self.highScore = UserDefaults.standard.integer(forKey: "HighScore")
+      }
     
     func setUpGame() {
          
@@ -55,19 +66,21 @@ class ArcadeGameLogic: ObservableObject {
         if playerHealth == 0 {
             finishTheGame()
         }
-        print("Player Health: \(playerHealth)")
+        print("\(playerHealth) HP")
         print(isGameOver)
     }
 
     func finishTheGame() {
         stopHealthTimer()
         isGameOver = true
+        
     }
 
     func restartGame() {
         playerHealth = 20
         isGameOver = false
         startHealthTimer()
+        self.currentScore = 0
         
         
     }

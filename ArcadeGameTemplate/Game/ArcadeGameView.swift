@@ -42,6 +42,8 @@ struct ArcadeGameView: View {
         scene.scaleMode = .fill
         
         return scene
+        
+        
     }
     
     var body: some View {
@@ -51,7 +53,6 @@ struct ArcadeGameView: View {
                 .frame(width: screenWidth, height: screenHeight)
                 .statusBar(hidden: true)
                 .ignoresSafeArea()
-            
             
         
                 

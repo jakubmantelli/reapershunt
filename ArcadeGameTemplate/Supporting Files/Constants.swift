@@ -41,7 +41,7 @@ struct MainScreenProperties {
     
     static let gameInstructions: [Instruction] = [
         (icon: "hand.raised", title: "Collect Souls ", description: "Collect souls that run away from you!"),
-        (icon: "hand.tap", title: "Don't Die", description: "Watch out for your health, as your vital orb decreases if you dont harvest souls"),
+        (icon: "hand.tap", title: "Your Health Matters!", description: "Watch out for your health, as your vital orb decreases if you dont harvest souls"),
         (icon: "hand.draw", title: "Survive", description: "Survive and prove that you are the true Grim Reaper successor!")
     ]
     
@@ -51,3 +51,6 @@ struct MainScreenProperties {
     
     static let accentColor: Color = Color.accentColor
 }
+
+
+

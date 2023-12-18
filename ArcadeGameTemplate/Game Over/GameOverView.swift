@@ -25,47 +25,58 @@ struct GameOverView: View {
             ZStack {
                 VStack(alignment: .center) {
                     
-                    
-                  
-                    
-                    
-                    Text("GAME OVER")
-                        .bold()
+        
+                    Spacer(minLength: 250)
+                    Text("You hunted \(ArcadeGameLogic.shared.currentScore) Souls!")
                         .foregroundStyle(Color.white)
-                        .background(Image("Button06").frame(width: 100, height: 100, alignment: .center))
-                        .padding(.top, 200)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .padding()
+                    Text("Highest Score: \(ArcadeGameLogic.shared.highScore) ")
+                        .foregroundStyle(Color.white)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     
-                    Spacer()
+                        
                     
                     Button {
                         withAnimation { self.restartGame() }
                     } label: {
-                        Text("Retry")
+                        Text("")
                             .foregroundColor(.white)
                             .font(.subheadline)
                         
-                            .background(Image("Button03").frame(width: 100, height: 100, alignment: .center))
+                            .background(Image("Game_Over_-_Retry_BTN")
+                                .resizable()
+                                .frame(width: 300, height: 50)
+                            
+                            ).frame(width: 100, height: 100, alignment: .center)
                     }
                     
                     Button {
                         withAnimation { self.backToMainScreen() }
                     } label: {
-                        Text("Main Menu")
+                        Text("")
                         
                             .foregroundColor(.white)
                             .font(.subheadline)
                         
-                            .background(Image("Button03")).frame(width: 100, height: 100, alignment: .center)
+                            .background(Image("Game_Over_-_Main_Menu_BTN")
+                                .resizable()
+                                .frame(width: 300, height: 50)
+                            
+                            ).frame(width: 100, height: 100, alignment: .center)
                     }
                     
-                    .padding()
+                    .padding(.top, -30)
                     Spacer()
                     
                 }
                 .navigationBarHidden(true)
             }
-            .background(Image("MessageBox04"))
-            .padding(.top, 50)
+            .background(Image("Game_Over_Panel")
+                .resizable()
+                .frame(width: 430, height: 1000))
+            
+         
             
             
         }

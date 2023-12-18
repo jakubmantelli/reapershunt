@@ -4,7 +4,7 @@
 //
 
 import SwiftUI
-
+import AVFoundation
 /**
  * # MainScreenView
  *
@@ -18,69 +18,139 @@ struct MainScreenView: View {
     
     // The game state is used to transition between the different states of the game
     @Binding var currentGameState: GameState
-    
-    
-    
-    // Change it on the Constants.swift file
-    var gameInstructions: [Instruction] = MainScreenProperties.gameInstructions
-    
+    @State private var showingTut = false
+    @State private var showingCred = false
+   
+   
     // Change it on the Constants.swift file
     let accentColor: Color = MainScreenProperties.accentColor
     
+    @State var menuMusicPlayer: AVAudioPlayer?
+    
+ 
     var body: some View {
         
-        ZStack {
-            VStack(alignment: .center, spacing: 16.0) {
-                Spacer()
-                /**
-                 * # PRO TIP!
-                 * The game title can be customized to represent the visual identity of the game
-                 */
-               
+        NavigationView {
+            
+            ZStack {
                 
-                Spacer()
+                //Background Image
                 
-                /**
-                 * To customize the instructions, check the **Constants.swift** file
-                 */
-                ForEach(self.gameInstructions, id: \.title) { instruction in
-                    GroupBox(label: Label("\(instruction.title)", systemImage: "\(instruction.icon)").foregroundColor(Color.red)) {
-                        HStack {
-                            Text("\(instruction.description)")
-                                .font(.callout)
-                            Spacer()
-                        }
+                Image("Reaper's Hunt Home - BG")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+             
+                
+                
+                VStack(alignment: .center) {
+                    
+                 
+ // Play Button
+                    
+                    
+                    Button {
+                        withAnimation { self.startGame() }
+                    } label: {
+                        Text("")
+                            .foregroundColor(.white)
+                            .font(.subheadline)
+                        
+                            .background(Image("Reaper's Hunt Home - Start Game BTN")
+                                .resizable()
+                                .frame(width: 400, height: 900)
+                                .offset(y: 60)
+                            ).frame(width: 100, height: 40, alignment: .center)
                     }
-                }
-                
-                Spacer()
-                
-                /**
-                 * Customize the appearance of the **Insert a Coin** button to match the visual identity of your game
+                    
+                    .padding(.top, 150)
+                    
+                    
+// Tutorial button
+                    
+                    
+                    Button {
+                        showingTut.toggle()
+                        
+                    } label: {
+                        Text("")
+                            .foregroundColor(.white)
+                            .font(.subheadline)
+                        
+                            .background(Image("Reapers_Hunt_Home_-_How_to_Play_BTN")
+                                .resizable()
+                                .frame(width: 350, height: 62)
+                                        
+                            ).frame(width: 100, height: 40, alignment: .center)
+                        
+                        
+                    }.sheet(isPresented: $showingTut) {
+                        TutorialView()
+                    }
+                   
+                    
+                    .padding(.top, 20)
+                    
+ // Credits button
+                    Button {
+                        showingCred.toggle()
+                    } label: {
+                        Text("")
+                           
+                        
+                            .background(Image("Reaper's Hunt Home - Credits BTN")
+                                .resizable()
+                                .frame(width: 400, height: 900)
+                                .offset(y: -40)
+                                        
+                            ).frame(width: 100, height: 40, alignment: .center)
+                        
+                    }   .sheet(isPresented: $showingCred) {
+                        CreditsView()
+                    }
+                  
+                  /*  Button {
+                        menuMusicPlayer?.stop()
+                 
+                        
+                    } label: {
+                        Text("")
+                          
+                        .background(Image("Reaper's Hunt Home - Volume On BTN")
+                            .resizable()
+                            .frame(width: 400, height: 400)
+                         
+                        ).frame(width: 100, height: 100, alignment: .center)
+              
+                        
+                    }
+                   
                  */
-                Button {
-                    withAnimation { self.startGame() }
-                } label: {
-                    Text("Play")
-                        .padding()
-                        .frame(maxWidth: 200)
+                        .onAppear {
+                                        //call music func
+                                        playMenuMusic()
+                                    }
+                        
+    
+                        
+                    
+            
+                        
+                    }
+                    .navigationBarHidden(true)
+                    .padding()
+                    .statusBar(hidden: true)
+                    
+                    
                 }
-                .foregroundColor(.white)
-                .background(Color.red)
-                .cornerRadius(10.0)
+                
+                
                 
             }
-            .navigationBarHidden(true)
-            .padding()
-            .statusBar(hidden: true)
+            
+            
         }
-        .background(
-            Image("Reaper's Hunt Home - BG")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
-        )
-    }
+        
     
            /**
      * Function responsible to start the game.
@@ -89,8 +159,30 @@ struct MainScreenView: View {
     private func startGame() {
         print("- Starting the game...")
         self.currentGameState = .playing
+        menuMusicPlayer?.stop()
+    }
+    
+    
+    func playMenuMusic() {
+        do {
+            if let menuMusicURL = Bundle.main.url(forResource: "ost menu", withExtension: "wav") {
+                menuMusicPlayer = try AVAudioPlayer(contentsOf: menuMusicURL)
+                menuMusicPlayer?.numberOfLoops = -1 // -1 means loop indefinitely
+                menuMusicPlayer?.volume = 0.3 // Adjust the volume as needed
+                menuMusicPlayer?.prepareToPlay()
+                menuMusicPlayer?.play()
+           
+            }
+        } catch {
+            print("Error playing background music: \(error.localizedDescription)")
+        }
     }
 }
+
+
+
+
+
 
 #Preview {
     MainScreenView(currentGameState: .constant(GameState.mainScreen))

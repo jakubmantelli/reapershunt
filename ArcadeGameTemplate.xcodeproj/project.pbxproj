@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		271CB25127D6569700615359 /* ArcadeGameTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271CB25027D6569700615359 /* ArcadeGameTemplateApp.swift */; };
 		271CB25327D6569700615359 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271CB25227D6569700615359 /* ContentView.swift */; };
-		271CB25527D6569900615359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271CB25427D6569900615359 /* Assets.xcassets */; };
 		271CB25827D6569900615359 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271CB25727D6569900615359 /* Preview Assets.xcassets */; };
 		271CB25F27D656A800615359 /* ArcadeGameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271CB25E27D656A800615359 /* ArcadeGameLogic.swift */; };
 		271CB26127D656BA00615359 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271CB26027D656BA00615359 /* MainScreenView.swift */; };
@@ -23,6 +22,13 @@
 		37333B532B29F3E5009AE831 /* SplashscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37333B522B29F3E5009AE831 /* SplashscreenView.swift */; };
 		3764F38D2B2C4F6400C00FF8 /* SoulsMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3764F38C2B2C4F6400C00FF8 /* SoulsMovement.swift */; };
 		37BDA0BF2B21C8530091B4C5 /* VirtualJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BDA0BE2B21C8530091B4C5 /* VirtualJoystick.swift */; };
+		37EB0E9E2B2F59DC0014F392 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB0E9D2B2F59DC0014F392 /* TutorialView.swift */; };
+		37EB0EA82B2F80BE0014F392 /* playBGM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB0EA72B2F80BE0014F392 /* playBGM.swift */; };
+		37EB0EAD2B2FB0B90014F392 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB0EAC2B2FB0B90014F392 /* CreditsView.swift */; };
+		37EB0EB02B2FBAA30014F392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271CB25427D6569900615359 /* Assets.xcassets */; };
+		37EB0EBA2B2FBFDA0014F392 /* ost_menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 37EB0EB92B2FBFDA0014F392 /* ost_menu.wav */; };
+		37EB0EBC2B2FC36C0014F392 /* ost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 37EB0EBB2B2FC36C0014F392 /* ost.wav */; };
+		37EB0EBE2B2FC84A0014F392 /* ost menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 37EB0EBD2B2FC84A0014F392 /* ost menu.wav */; };
 		B3DC430E2B27122800911924 /* MovementConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC430D2B27122800911924 /* MovementConstraints.swift */; };
 		B3DC43112B285DFB00911924 /* RegisterScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC43102B285DFB00911924 /* RegisterScore.swift */; };
 		B3DC43132B285E7800911924 /* GameOverCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC43122B285E7800911924 /* GameOverCondition.swift */; };
@@ -48,6 +54,12 @@
 		37333B522B29F3E5009AE831 /* SplashscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashscreenView.swift; sourceTree = "<group>"; };
 		3764F38C2B2C4F6400C00FF8 /* SoulsMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulsMovement.swift; sourceTree = "<group>"; };
 		37BDA0BE2B21C8530091B4C5 /* VirtualJoystick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualJoystick.swift; sourceTree = "<group>"; };
+		37EB0E9D2B2F59DC0014F392 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		37EB0EA72B2F80BE0014F392 /* playBGM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playBGM.swift; sourceTree = "<group>"; };
+		37EB0EAC2B2FB0B90014F392 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		37EB0EB92B2FBFDA0014F392 /* ost_menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ost_menu.wav; path = ../../../../../../Desktop/ost_menu.wav; sourceTree = "<group>"; };
+		37EB0EBB2B2FC36C0014F392 /* ost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ost.wav; path = ../../../../../../Desktop/ost.wav; sourceTree = "<group>"; };
+		37EB0EBD2B2FC84A0014F392 /* ost menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "ost menu.wav"; path = "../../../../../../Desktop/ost menu.wav"; sourceTree = "<group>"; };
 		B3DC430D2B27122800911924 /* MovementConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementConstraints.swift; sourceTree = "<group>"; };
 		B3DC43102B285DFB00911924 /* RegisterScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScore.swift; sourceTree = "<group>"; };
 		B3DC43122B285E7800911924 /* GameOverCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverCondition.swift; sourceTree = "<group>"; };
@@ -130,8 +142,10 @@
 		271CB26C27D6A13D00615359 /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
-				271CB26027D656BA00615359 /* MainScreenView.swift */,
 				37333B522B29F3E5009AE831 /* SplashscreenView.swift */,
+				271CB26027D656BA00615359 /* MainScreenView.swift */,
+				37EB0EAC2B2FB0B90014F392 /* CreditsView.swift */,
+				37EB0E9D2B2F59DC0014F392 /* TutorialView.swift */,
 			);
 			path = "Main Screen";
 			sourceTree = "<group>";
@@ -147,6 +161,9 @@
 		B3DC430F2B285DA400911924 /* ExtensionsAGS */ = {
 			isa = PBXGroup;
 			children = (
+				37EB0EBD2B2FC84A0014F392 /* ost menu.wav */,
+				37EB0EBB2B2FC36C0014F392 /* ost.wav */,
+				37EB0EB92B2FBFDA0014F392 /* ost_menu.wav */,
 				B3DC430D2B27122800911924 /* MovementConstraints.swift */,
 				B3DC43102B285DFB00911924 /* RegisterScore.swift */,
 				B3DC43122B285E7800911924 /* GameOverCondition.swift */,
@@ -154,6 +171,7 @@
 				B3DC43162B285F1700911924 /* GameSceneSetUp.swift */,
 				372F27E32B2C4AF000DAA858 /* CheckColision.swift */,
 				3764F38C2B2C4F6400C00FF8 /* SoulsMovement.swift */,
+				37EB0EA72B2F80BE0014F392 /* playBGM.swift */,
 			);
 			path = ExtensionsAGS;
 			sourceTree = "<group>";
@@ -216,8 +234,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37EB0EBA2B2FBFDA0014F392 /* ost_menu.wav in Resources */,
+				37EB0EBC2B2FC36C0014F392 /* ost.wav in Resources */,
+				37EB0EB02B2FBAA30014F392 /* Assets.xcassets in Resources */,
 				271CB25827D6569900615359 /* Preview Assets.xcassets in Resources */,
-				271CB25527D6569900615359 /* Assets.xcassets in Resources */,
+				37EB0EBE2B2FC84A0014F392 /* ost menu.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3DC43152B285ECF00911924 /* HandlePlayerInputs.swift in Sources */,
+				37EB0EAD2B2FB0B90014F392 /* CreditsView.swift in Sources */,
 				271CB26E27D6A58A00615359 /* ArcadeGameScene.swift in Sources */,
 				37333B532B29F3E5009AE831 /* SplashscreenView.swift in Sources */,
 				B3DC43112B285DFB00911924 /* RegisterScore.swift in Sources */,
@@ -236,11 +258,13 @@
 				B3DC430E2B27122800911924 /* MovementConstraints.swift in Sources */,
 				37333B512B29D277009AE831 /* HealthBar.swift in Sources */,
 				271CB25F27D656A800615359 /* ArcadeGameLogic.swift in Sources */,
+				37EB0E9E2B2F59DC0014F392 /* TutorialView.swift in Sources */,
 				271CB25327D6569700615359 /* ContentView.swift in Sources */,
 				B3DC43172B285F1700911924 /* GameSceneSetUp.swift in Sources */,
 				271CB27227D74CB900615359 /* GameScoreView.swift in Sources */,
 				37BDA0BF2B21C8530091B4C5 /* VirtualJoystick.swift in Sources */,
 				372F27E42B2C4AF000DAA858 /* CheckColision.swift in Sources */,
+				37EB0EA82B2F80BE0014F392 /* playBGM.swift in Sources */,
 				B3DC43132B285E7800911924 /* GameOverCondition.swift in Sources */,
 				3764F38D2B2C4F6400C00FF8 /* SoulsMovement.swift in Sources */,
 				271CB25127D6569700615359 /* ArcadeGameTemplateApp.swift in Sources */,
@@ -380,6 +404,7 @@
 				DEVELOPMENT_TEAM = 9GP6UM8QNA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ArcadeGameTemplate/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Reaper's Hunt";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.arcade-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -417,6 +442,7 @@
 				DEVELOPMENT_TEAM = 9GP6UM8QNA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ArcadeGameTemplate/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Reaper's Hunt";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.arcade-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

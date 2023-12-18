@@ -18,17 +18,18 @@ struct GameScoreView: View {
     var body: some View {
         ZStack {
             Text("\(score)")
-                .foregroundColor(.red)
+                .foregroundColor(.white)
+                .font(.custom("font", size: 40))
                 .bold()
                 .background(Image("Counter - Panel")
                     .resizable()
-                    .frame(width:300, height: 65)
+                    .frame(width:300, height: 60)
               
                     )
                 
                 .padding(.top, 90)
            
-            
+    
             
             
         }

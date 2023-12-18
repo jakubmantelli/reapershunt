@@ -46,6 +46,7 @@ extension ArcadeGameScene {
                     attackAnimation = SKAction.animate(with: textures, timePerFrame: 0.05,resize:true, restore: true)
                     skeleton.run(attackAnimation,withKey: "attackAnimation")
                     ArcadeGameLogic.shared.increasePlayerHealth()
+                    UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
 
 
                 }
@@ -53,12 +54,15 @@ extension ArcadeGameScene {
             enemy.removeAllActions()
             enemy.run(deadAnimationR) {
                 enemy.removeFromParent()
+      
                 ArcadeGameLogic.shared.currentScore += 1
+                self.registerScore()
             }
             
+      
             
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.success)
+            
+           
             
 
         }
