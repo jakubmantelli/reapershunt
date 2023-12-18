@@ -23,7 +23,7 @@ struct SplashScreenView: View {
                 
                 VStack {
                     
-                Image("Reaper's Hunt - Splash_Art")
+                Image("Reaper's Hunt - Slpash Art")
                         .resizable()
                         .scaledToFill()
                         .ignoresSafeArea()

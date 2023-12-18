@@ -10,10 +10,10 @@ extension ArcadeGameScene {
 
     // Calculate the efective limits of the map
     var mapBounds: CGRect {
-        let originX = (-scaledWidth / 2) + 20
-        let originY = (-scaledHeight / 2) + 40 // Limite inferior
-        return CGRect(x: originX, y: originY, width: scaledWidth-70, height: scaledHeight-90)
-    }
+            let originX = (-scaledWidth / 2) + 100
+            let originY = (-scaledHeight/2) + 115
+            return CGRect(x: originX, y: originY, width: scaledWidth-200, height: scaledHeight-315)
+        }
 
     // Manages the player position, verifying if it's inside the map.
     func updatePlayerPosition(with joystickDelta: CGPoint) -> (isAtHorizontalEdge: Bool, isAtVerticalEdge: Bool) {
