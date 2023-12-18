@@ -39,11 +39,11 @@ class ArcadeGameLogic: ObservableObject {
      }
    
 
-    func startHealthTimer() {
-        healthTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
-            self?.decreasePlayerHealth()
+    func startHealthTimer(_ time:Double = 1) {
+            healthTimer = Timer.scheduledTimer(withTimeInterval: time, repeats: true) { [weak self] timer in
+                self?.decreasePlayerHealth()
+            }
         }
-    }
 
     func stopHealthTimer() {
         healthTimer?.invalidate()

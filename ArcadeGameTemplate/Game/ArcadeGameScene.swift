@@ -7,7 +7,8 @@ import SpriteKit
 import SwiftUI
 import AVFoundation
 class ArcadeGameScene: SKScene {
-    
+    var lifePerSecond:Double = 1
+    var secondBetweenSpawn:Double = 2
     var gameState: GameState = .playing
     
     // healthbar
@@ -32,6 +33,11 @@ class ArcadeGameScene: SKScene {
     var scaledWidth: CGFloat { originalMapWidth * mapScaleFactor }
     var scaledHeight: CGFloat { originalMapHeight * mapScaleFactor }
     var randomDirectionsForSouls: [String: CGVector] = [:]
+    
+    var quadrant:[[Int]] = [[-774,-548],[-258,-548],[258,-548],[-774,0],[-258,0],[258,0]]
+        var quadrantIndex:Int = 0
+
+    
     
     override func didMove(to view: SKView) {
         //music
@@ -84,6 +90,8 @@ class ArcadeGameScene: SKScene {
         addSoulToScene()
         addSoulToScene()
         addSoulToScene()
+        repeaterSpawn()
+                repeaterFixer()
 
         
         // health bar node & update func
@@ -205,8 +213,6 @@ class ArcadeGameScene: SKScene {
             virtualJoystick?.touchesBegan(touches, with: event)
             if let touch = touches.first {
                 virtualJoystick?.position = CGPoint(x:(skeletonPosLimit(pos:skeleton.position.x,axis:"x") - (self.frame.width/2) + touch.location(in:self.cam).x),y:(skeletonPosLimit(pos:skeleton.position.y,axis:"y")  + (self.frame.height/2) - touch.location(in:self.cam).y))
-                    
-                addSoulToScene()
             }
             }
     
