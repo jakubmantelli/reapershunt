@@ -26,8 +26,9 @@
 		37EB0EA82B2F80BE0014F392 /* playBGM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB0EA72B2F80BE0014F392 /* playBGM.swift */; };
 		37EB0EAD2B2FB0B90014F392 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB0EAC2B2FB0B90014F392 /* CreditsView.swift */; };
 		37EB0EB02B2FBAA30014F392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271CB25427D6569900615359 /* Assets.xcassets */; };
-		37EB0EBC2B2FC36C0014F392 /* ost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 37EB0EBB2B2FC36C0014F392 /* ost.wav */; };
-		37EB0EBE2B2FC84A0014F392 /* ost menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 37EB0EBD2B2FC84A0014F392 /* ost menu.wav */; };
+		B34767F62B30B5F30042AD28 /* ost.wav in Resources */ = {isa = PBXBuildFile; fileRef = B34767F42B30B5F30042AD28 /* ost.wav */; };
+		B34767F72B30B5F30042AD28 /* ost menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = B34767F52B30B5F30042AD28 /* ost menu.wav */; };
+		B34767F92B30B62E0042AD28 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34767F82B30B62E0042AD28 /* AudioManager.swift */; };
 		B3DC430E2B27122800911924 /* MovementConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC430D2B27122800911924 /* MovementConstraints.swift */; };
 		B3DC43112B285DFB00911924 /* RegisterScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC43102B285DFB00911924 /* RegisterScore.swift */; };
 		B3DC43132B285E7800911924 /* GameOverCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC43122B285E7800911924 /* GameOverCondition.swift */; };
@@ -56,8 +57,9 @@
 		37EB0E9D2B2F59DC0014F392 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		37EB0EA72B2F80BE0014F392 /* playBGM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playBGM.swift; sourceTree = "<group>"; };
 		37EB0EAC2B2FB0B90014F392 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
-		37EB0EBB2B2FC36C0014F392 /* ost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ost.wav; path = ../../../../../../Desktop/ost.wav; sourceTree = "<group>"; };
-		37EB0EBD2B2FC84A0014F392 /* ost menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "ost menu.wav"; path = "../../../../../../Desktop/ost menu.wav"; sourceTree = "<group>"; };
+		B34767F42B30B5F30042AD28 /* ost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ost.wav; path = ../../../../../../Downloads/ost.wav; sourceTree = "<group>"; };
+		B34767F52B30B5F30042AD28 /* ost menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "ost menu.wav"; path = "../../../../../../Downloads/ost menu.wav"; sourceTree = "<group>"; };
+		B34767F82B30B62E0042AD28 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		B3DC430D2B27122800911924 /* MovementConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementConstraints.swift; sourceTree = "<group>"; };
 		B3DC43102B285DFB00911924 /* RegisterScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScore.swift; sourceTree = "<group>"; };
 		B3DC43122B285E7800911924 /* GameOverCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverCondition.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		271CB26C27D6A13D00615359 /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
+				B34767F82B30B62E0042AD28 /* AudioManager.swift */,
 				37333B522B29F3E5009AE831 /* SplashscreenView.swift */,
 				271CB26027D656BA00615359 /* MainScreenView.swift */,
 				37EB0EAC2B2FB0B90014F392 /* CreditsView.swift */,
@@ -159,8 +162,8 @@
 		B3DC430F2B285DA400911924 /* ExtensionsAGS */ = {
 			isa = PBXGroup;
 			children = (
-				37EB0EBD2B2FC84A0014F392 /* ost menu.wav */,
-				37EB0EBB2B2FC36C0014F392 /* ost.wav */,
+				B34767F52B30B5F30042AD28 /* ost menu.wav */,
+				B34767F42B30B5F30042AD28 /* ost.wav */,
 				B3DC430D2B27122800911924 /* MovementConstraints.swift */,
 				B3DC43102B285DFB00911924 /* RegisterScore.swift */,
 				B3DC43122B285E7800911924 /* GameOverCondition.swift */,
@@ -231,10 +234,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37EB0EBC2B2FC36C0014F392 /* ost.wav in Resources */,
+				B34767F62B30B5F30042AD28 /* ost.wav in Resources */,
 				37EB0EB02B2FBAA30014F392 /* Assets.xcassets in Resources */,
 				271CB25827D6569900615359 /* Preview Assets.xcassets in Resources */,
-				37EB0EBE2B2FC84A0014F392 /* ost menu.wav in Resources */,
+				B34767F72B30B5F30042AD28 /* ost menu.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +251,7 @@
 				B3DC43152B285ECF00911924 /* HandlePlayerInputs.swift in Sources */,
 				37EB0EAD2B2FB0B90014F392 /* CreditsView.swift in Sources */,
 				271CB26E27D6A58A00615359 /* ArcadeGameScene.swift in Sources */,
+				B34767F92B30B62E0042AD28 /* AudioManager.swift in Sources */,
 				37333B532B29F3E5009AE831 /* SplashscreenView.swift in Sources */,
 				B3DC43112B285DFB00911924 /* RegisterScore.swift in Sources */,
 				271CB26127D656BA00615359 /* MainScreenView.swift in Sources */,
@@ -397,7 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ArcadeGameTemplate/Preview Content\"";
-				DEVELOPMENT_TEAM = 9GP6UM8QNA;
+				DEVELOPMENT_TEAM = WTLRY9GBMJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArcadeGameTemplate/Info.plist;
@@ -415,7 +419,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jakub.bundle;
+				PRODUCT_BUNDLE_IDENTIFIER = mtorres.reaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -435,7 +439,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ArcadeGameTemplate/Preview Content\"";
-				DEVELOPMENT_TEAM = 9GP6UM8QNA;
+				DEVELOPMENT_TEAM = WTLRY9GBMJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArcadeGameTemplate/Info.plist;
@@ -453,7 +457,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jakub.bundle;
+				PRODUCT_BUNDLE_IDENTIFIER = mtorres.reaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
