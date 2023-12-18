@@ -157,6 +157,7 @@ class ArcadeGameScene: SKScene {
                 walkingAnimationL = SKAction.animate(with: textures, timePerFrame: 0.1)
                 skeleton.run(SKAction.repeatForever(walkingAnimationL),withKey: "walkingAnimationL")
                 skeleton.removeAction(forKey: "walkingAnimationR")}
+            
         }
     }
     

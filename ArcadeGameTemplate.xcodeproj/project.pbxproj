@@ -26,7 +26,6 @@
 		37EB0EA82B2F80BE0014F392 /* playBGM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB0EA72B2F80BE0014F392 /* playBGM.swift */; };
 		37EB0EAD2B2FB0B90014F392 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB0EAC2B2FB0B90014F392 /* CreditsView.swift */; };
 		37EB0EB02B2FBAA30014F392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271CB25427D6569900615359 /* Assets.xcassets */; };
-		37EB0EBA2B2FBFDA0014F392 /* ost_menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 37EB0EB92B2FBFDA0014F392 /* ost_menu.wav */; };
 		37EB0EBC2B2FC36C0014F392 /* ost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 37EB0EBB2B2FC36C0014F392 /* ost.wav */; };
 		37EB0EBE2B2FC84A0014F392 /* ost menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 37EB0EBD2B2FC84A0014F392 /* ost menu.wav */; };
 		B3DC430E2B27122800911924 /* MovementConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC430D2B27122800911924 /* MovementConstraints.swift */; };
@@ -57,7 +56,6 @@
 		37EB0E9D2B2F59DC0014F392 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		37EB0EA72B2F80BE0014F392 /* playBGM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playBGM.swift; sourceTree = "<group>"; };
 		37EB0EAC2B2FB0B90014F392 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
-		37EB0EB92B2FBFDA0014F392 /* ost_menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ost_menu.wav; path = ../../../../../../Desktop/ost_menu.wav; sourceTree = "<group>"; };
 		37EB0EBB2B2FC36C0014F392 /* ost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ost.wav; path = ../../../../../../Desktop/ost.wav; sourceTree = "<group>"; };
 		37EB0EBD2B2FC84A0014F392 /* ost menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "ost menu.wav"; path = "../../../../../../Desktop/ost menu.wav"; sourceTree = "<group>"; };
 		B3DC430D2B27122800911924 /* MovementConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementConstraints.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 			children = (
 				37EB0EBD2B2FC84A0014F392 /* ost menu.wav */,
 				37EB0EBB2B2FC36C0014F392 /* ost.wav */,
-				37EB0EB92B2FBFDA0014F392 /* ost_menu.wav */,
 				B3DC430D2B27122800911924 /* MovementConstraints.swift */,
 				B3DC43102B285DFB00911924 /* RegisterScore.swift */,
 				B3DC43122B285E7800911924 /* GameOverCondition.swift */,
@@ -234,7 +231,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37EB0EBA2B2FBFDA0014F392 /* ost_menu.wav in Resources */,
 				37EB0EBC2B2FC36C0014F392 /* ost.wav in Resources */,
 				37EB0EB02B2FBAA30014F392 /* Assets.xcassets in Resources */,
 				271CB25827D6569900615359 /* Preview Assets.xcassets in Resources */,

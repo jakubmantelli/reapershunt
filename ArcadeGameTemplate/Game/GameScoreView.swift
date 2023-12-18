@@ -21,9 +21,11 @@ struct GameScoreView: View {
                 .foregroundColor(.white)
                 .font(.custom("font", size: 40))
                 .bold()
+                .opacity(1)
                 .background(Image("Counter - Panel")
                     .resizable()
                     .frame(width:300, height: 60)
+                    .opacity(0.5)
               
                     )
                 
