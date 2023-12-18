@@ -58,12 +58,9 @@ struct MainScreenView: View {
                         
                             .background(Image("Reaper's Hunt Home - Start Game BTN")
                                 .resizable()
-                                .frame(width: 400, height: 900)
-                                .offset(y: 60)
-                            ).frame(width: 100, height: 40, alignment: .center)
+                                .frame(width: 350, height: 63)
+                            ).frame(width: 350, height: 63, alignment: .center)
                     }
-                    
-                    .padding(.top, 400)
                     
                     
 // Tutorial button
@@ -79,9 +76,9 @@ struct MainScreenView: View {
                         
                             .background(Image("Reapers_Hunt_Home_-_How_to_Play_BTN")
                                 .resizable()
-                                .frame(width: 350, height: 62)
+                                .frame(width: 350, height: 63)
                                         
-                            ).frame(width: 100, height: 40, alignment: .center)
+                            ).frame(width: 350, height: 63, alignment: .center)
                         
                         
                     }.sheet(isPresented: $showingTut) {
@@ -89,7 +86,7 @@ struct MainScreenView: View {
                     }
                    
                     
-                    .padding(.top, 20)
+                    .padding(.top, 10)
                     
  // Credits button
                     Button {
@@ -100,15 +97,16 @@ struct MainScreenView: View {
                         
                             .background(Image("Reaper's Hunt Home - Credits BTN")
                                 .resizable()
-                                .frame(width: 400, height: 900)
-                                .offset(y: -40)
+                                .frame(width: 350, height: 63)
                                         
-                            ).frame(width: 100, height: 40, alignment: .center)
+                            ).frame(width: 350, height: 63, alignment: .center)
                         
                     }   .sheet(isPresented: $showingCred) {
                         CreditsView()
                     }
                   
+                    .padding(.top, 10)
+                    
                   /*  Button {
                         menuMusicPlayer?.stop()
                  

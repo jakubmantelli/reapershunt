@@ -25,7 +25,7 @@ struct GameScoreView: View {
                 .background(Image("Counter - Panel")
                     .resizable()
                     .frame(width:300, height: 60)
-                    .opacity(0.5)
+            
               
                     )
                 
