@@ -17,9 +17,9 @@ extension ArcadeGameScene {
 
     // Manages the player position, verifying if it's inside the map.
     func updatePlayerPosition(with joystickDelta: CGPoint) -> (isAtHorizontalEdge: Bool, isAtVerticalEdge: Bool) {
-        let speed: CGFloat = 3.0
-        let potentialNewPosition = CGPoint(x: skeleton.position.x + joystickDelta.x * speed,
-                                           y: skeleton.position.y + joystickDelta.y * speed)
+    
+        let potentialNewPosition = CGPoint(x: skeleton.position.x + joystickDelta.x * self.playerSpeed,
+                                           y: skeleton.position.y + joystickDelta.y * self.playerSpeed)
 
         // Verify if the player is touching a border in the map.
         let isAtHorizontalEdge = skeleton.position.x <= mapBounds.minX || skeleton.position.x >= mapBounds.maxX

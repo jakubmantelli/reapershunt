@@ -10,8 +10,11 @@ import AVFoundation
 class ArcadeGameScene: SKScene {
     
     /* *** Variables here *** */
+    var playerSpeed:CGFloat = 3.0
+    var soulCount:Int = 0
+    var sinFunc:[Double] = [0,0.76,1.41,1.85,2,1.85,1.41,0.76,0]
     var lifePerSecond:Double = 1
-    var secondBetweenSpawn:Double = 2
+    var counterSpawn:Int = 0
     var gameState: GameState = .playing
     // healthbar
     private var healthBar: HealthBar!
@@ -59,9 +62,6 @@ class ArcadeGameScene: SKScene {
         for i in 0...4 {
             textures.append(SKTexture(imageNamed:"reaper_idle_anim_f\(i)_R"))
         }
-        for i in stride(from: 3, through: 0, by: -1) {
-            textures.append(textures[i])
-        }
         skeletonAnimation = SKAction.animate(with: textures, timePerFrame: 0.2)
         // Create skeleton node
         skeleton = SKSpriteNode(imageNamed: "reaper_idle_anim_f0_R")
@@ -79,9 +79,9 @@ class ArcadeGameScene: SKScene {
         skeleton.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         // Add soul to the scene
-        for _ in 0...5 {
             addSoulToScene()
-        }
+            addSoulToScene()
+            addSoulToScene()
         repeaterSpawn()
         repeaterFixer()
         
@@ -109,10 +109,6 @@ class ArcadeGameScene: SKScene {
                 for i in 0...7 {
                     textures.append(SKTexture(imageNamed:"reaper_run_anim_f\(i)_R"))
                 }
-                // For cicle with stride function.
-                for i in stride(from: 7, through: 0, by: -1) {
-                    textures.append(textures[i])
-                }
                 /* *** *** *** */
                 walkingAnimationR = SKAction.animate(with: textures, timePerFrame: 0.1)
                 skeleton.run(SKAction.repeatForever(walkingAnimationR),withKey: "walkingAnimationR")
@@ -128,10 +124,6 @@ class ArcadeGameScene: SKScene {
                 var textures:[SKTexture] = []
                 for i in 0...7 {
                     textures.append(SKTexture(imageNamed:"reaper_run_anim_f\(i)_L"))
-                }
-                // For cicle with stride function.
-                for i in stride(from: 7, through: 0, by: -1) {
-                    textures.append(textures[i])
                 }
                 /* *** *** *** */
                 walkingAnimationL = SKAction.animate(with: textures, timePerFrame: 0.1)
@@ -151,9 +143,6 @@ class ArcadeGameScene: SKScene {
             for i in 0...4 {
                 textures.append(SKTexture(imageNamed:"reaper_idle_anim_f\(i)_L"))
             }
-            for i in stride(from: 3, through: 0, by: -1) {
-                textures.append(textures[i])
-            }
             idleAnimationR = SKAction.animate(with: textures, timePerFrame: 0.2)
             skeleton.run(SKAction.repeatForever(idleAnimationR),withKey: "idleAnimation")
             skeleton.removeAction(forKey: "walkingAnimationL")
@@ -163,9 +152,6 @@ class ArcadeGameScene: SKScene {
             var textures:[SKTexture] = []
             for i in 0...4 {
                 textures.append(SKTexture(imageNamed:"reaper_idle_anim_f\(i)_R"))
-            }
-            for i in stride(from: 3, through: 0, by: -1) {
-                textures.append(textures[i])
             }
             idleAnimationR = SKAction.animate(with: textures, timePerFrame: 0.2)
             skeleton.run(SKAction.repeatForever(idleAnimationR),withKey: "idleAnimation")
@@ -245,18 +231,18 @@ class ArcadeGameScene: SKScene {
         if let joystick = virtualJoystick {
             let joystickDelta = joystick.getJoystickDelta()
             let (isAtHorizontalEdge, isAtVerticalEdge) = updatePlayerPosition(with: joystickDelta)
-            let speed: CGFloat = 3.0
+            
             // Camera's position adjusment (positive = right, negative = left)
             if (skeleton.position.x > -1355 && skeleton.position.x < 1355){
                 cam.position.x = skeleton.position.x
                 if !isAtHorizontalEdge {
-                    virtualJoystick?.position.x += joystickDelta.x * speed
+                    virtualJoystick?.position.x += joystickDelta.x * self.playerSpeed
                 }
             }
             if (skeleton.position.y > -655 && skeleton.position.y < 675){
                 cam.position.y = skeleton.position.y
                 if !isAtVerticalEdge {
-                    virtualJoystick?.position.y += joystickDelta.y * speed
+                    virtualJoystick?.position.y += joystickDelta.y * self.playerSpeed
                 }
             }
             // fix healthbar to player

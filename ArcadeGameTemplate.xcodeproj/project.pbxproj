@@ -26,8 +26,10 @@
 		37EB0EA82B2F80BE0014F392 /* playBGM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB0EA72B2F80BE0014F392 /* playBGM.swift */; };
 		37EB0EAD2B2FB0B90014F392 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EB0EAC2B2FB0B90014F392 /* CreditsView.swift */; };
 		37EB0EB02B2FBAA30014F392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271CB25427D6569900615359 /* Assets.xcassets */; };
-		B34767F62B30B5F30042AD28 /* ost.wav in Resources */ = {isa = PBXBuildFile; fileRef = B34767F42B30B5F30042AD28 /* ost.wav */; };
-		B34767F72B30B5F30042AD28 /* ost menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = B34767F52B30B5F30042AD28 /* ost menu.wav */; };
+		6BBF09A82B318644009A51EB /* ost menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6BBF09A72B318644009A51EB /* ost menu.wav */; };
+		6BBF09AA2B318656009A51EB /* ost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6BBF09A92B318656009A51EB /* ost.wav */; };
+		6BBF09AC2B3189FE009A51EB /* SpawninMechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF09AB2B3189FE009A51EB /* SpawninMechanics.swift */; };
+		6BBF09AE2B3197E6009A51EB /* PowerUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF09AD2B3197E6009A51EB /* PowerUps.swift */; };
 		B34767F92B30B62E0042AD28 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34767F82B30B62E0042AD28 /* AudioManager.swift */; };
 		B3DC430E2B27122800911924 /* MovementConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC430D2B27122800911924 /* MovementConstraints.swift */; };
 		B3DC43112B285DFB00911924 /* RegisterScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC43102B285DFB00911924 /* RegisterScore.swift */; };
@@ -57,8 +59,10 @@
 		37EB0E9D2B2F59DC0014F392 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		37EB0EA72B2F80BE0014F392 /* playBGM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playBGM.swift; sourceTree = "<group>"; };
 		37EB0EAC2B2FB0B90014F392 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
-		B34767F42B30B5F30042AD28 /* ost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ost.wav; path = ../../../../../../Desktop/ost.wav; sourceTree = "<group>"; };
-		B34767F52B30B5F30042AD28 /* ost menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "ost menu.wav"; path = "../../../../../../Desktop/ost menu.wav"; sourceTree = "<group>"; };
+		6BBF09A72B318644009A51EB /* ost menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "ost menu.wav"; sourceTree = "<group>"; };
+		6BBF09A92B318656009A51EB /* ost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ost.wav; sourceTree = "<group>"; };
+		6BBF09AB2B3189FE009A51EB /* SpawninMechanics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawninMechanics.swift; sourceTree = "<group>"; };
+		6BBF09AD2B3197E6009A51EB /* PowerUps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUps.swift; sourceTree = "<group>"; };
 		B34767F82B30B62E0042AD28 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		B3DC430D2B27122800911924 /* MovementConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementConstraints.swift; sourceTree = "<group>"; };
 		B3DC43102B285DFB00911924 /* RegisterScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScore.swift; sourceTree = "<group>"; };
@@ -162,8 +166,8 @@
 		B3DC430F2B285DA400911924 /* ExtensionsAGS */ = {
 			isa = PBXGroup;
 			children = (
-				B34767F52B30B5F30042AD28 /* ost menu.wav */,
-				B34767F42B30B5F30042AD28 /* ost.wav */,
+				6BBF09A72B318644009A51EB /* ost menu.wav */,
+				6BBF09A92B318656009A51EB /* ost.wav */,
 				B3DC430D2B27122800911924 /* MovementConstraints.swift */,
 				B3DC43102B285DFB00911924 /* RegisterScore.swift */,
 				B3DC43122B285E7800911924 /* GameOverCondition.swift */,
@@ -172,6 +176,8 @@
 				372F27E32B2C4AF000DAA858 /* CheckColision.swift */,
 				3764F38C2B2C4F6400C00FF8 /* SoulsMovement.swift */,
 				37EB0EA72B2F80BE0014F392 /* playBGM.swift */,
+				6BBF09AB2B3189FE009A51EB /* SpawninMechanics.swift */,
+				6BBF09AD2B3197E6009A51EB /* PowerUps.swift */,
 			);
 			path = ExtensionsAGS;
 			sourceTree = "<group>";
@@ -234,10 +240,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B34767F62B30B5F30042AD28 /* ost.wav in Resources */,
 				37EB0EB02B2FBAA30014F392 /* Assets.xcassets in Resources */,
 				271CB25827D6569900615359 /* Preview Assets.xcassets in Resources */,
-				B34767F72B30B5F30042AD28 /* ost menu.wav in Resources */,
+				6BBF09A82B318644009A51EB /* ost menu.wav in Resources */,
+				6BBF09AA2B318656009A51EB /* ost.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +258,7 @@
 				37EB0EAD2B2FB0B90014F392 /* CreditsView.swift in Sources */,
 				271CB26E27D6A58A00615359 /* ArcadeGameScene.swift in Sources */,
 				B34767F92B30B62E0042AD28 /* AudioManager.swift in Sources */,
+				6BBF09AC2B3189FE009A51EB /* SpawninMechanics.swift in Sources */,
 				37333B532B29F3E5009AE831 /* SplashscreenView.swift in Sources */,
 				B3DC43112B285DFB00911924 /* RegisterScore.swift in Sources */,
 				271CB26127D656BA00615359 /* MainScreenView.swift in Sources */,
@@ -262,6 +269,7 @@
 				271CB25327D6569700615359 /* ContentView.swift in Sources */,
 				B3DC43172B285F1700911924 /* GameSceneSetUp.swift in Sources */,
 				271CB27227D74CB900615359 /* GameScoreView.swift in Sources */,
+				6BBF09AE2B3197E6009A51EB /* PowerUps.swift in Sources */,
 				37BDA0BF2B21C8530091B4C5 /* VirtualJoystick.swift in Sources */,
 				372F27E42B2C4AF000DAA858 /* CheckColision.swift in Sources */,
 				37EB0EA82B2F80BE0014F392 /* playBGM.swift in Sources */,
@@ -401,7 +409,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ArcadeGameTemplate/Preview Content\"";
-				DEVELOPMENT_TEAM = 9GP6UM8QNA;
+				DEVELOPMENT_TEAM = 6XT9AC4G36;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArcadeGameTemplate/Info.plist;
@@ -419,7 +427,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jaksmante.reaper;
+				PRODUCT_BUNDLE_IDENTIFIER = vitor.reaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -439,7 +447,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ArcadeGameTemplate/Preview Content\"";
-				DEVELOPMENT_TEAM = 9GP6UM8QNA;
+				DEVELOPMENT_TEAM = 6XT9AC4G36;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArcadeGameTemplate/Info.plist;
@@ -457,7 +465,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jaksmante.reaper;
+				PRODUCT_BUNDLE_IDENTIFIER = vitor.reaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

@@ -10,6 +10,7 @@ import UIKit
 
 extension ArcadeGameScene {
     func checkColision(){
+        //ENEMIES COLLISION
         var hitEnemies:[SKSpriteNode] = []
 
         enumerateChildNodes(withName:"soul"){node,_  in
@@ -47,13 +48,12 @@ extension ArcadeGameScene {
                     skeleton.run(attackAnimation,withKey: "attackAnimation")
                     ArcadeGameLogic.shared.increasePlayerHealth()
                     UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-
-
                 }
             }
             enemy.removeAllActions()
             enemy.run(deadAnimationR) {
                 enemy.removeFromParent()
+                self.soulCount -= 1
       
                 ArcadeGameLogic.shared.currentScore += 1
                 self.registerScore()
@@ -62,9 +62,21 @@ extension ArcadeGameScene {
       
             
             
-           
-            
 
         }
+        // POWER UPS COLLISION
+        
+        var hitPowerUps:[SKSpriteNode] = []
+            enumerateChildNodes(withName:"powerUps"){node,_  in
+            let power = node as! SKSpriteNode
+            if CGRectIntersectsRect(power.frame,self.skeleton.frame){
+                hitPowerUps.append(power)
+                self.increaseSpeed()
+            }
+        }
+        for power in hitPowerUps{
+            power.removeAllActions()
+            power.removeFromParent()}
+        
     }
 }
