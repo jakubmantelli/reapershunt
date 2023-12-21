@@ -67,7 +67,7 @@ extension ArcadeGameScene {
         // POWER UPS COLLISION
         
         var hitPowerUps:[SKSpriteNode] = []
-            enumerateChildNodes(withName:"powerUps"){node,_  in
+            enumerateChildNodes(withName:"powerUpGodSpeed"){node,_  in
             let power = node as! SKSpriteNode
             if CGRectIntersectsRect(power.frame,self.skeleton.frame){
                 hitPowerUps.append(power)
