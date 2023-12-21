@@ -25,24 +25,13 @@ struct GameScoreView: View {
                 .background(Image("Counter - Panel")
                     .resizable()
                     .frame(width:300, height: 60)
-            
-              
                     )
-                
                 .padding(.top, 90)
-           
-    
-            
-            
         }
-        
-        
     }
-    
 }
 
 #Preview {
     GameScoreView(score: .constant(100))
         .previewLayout(.fixed(width: 300, height: 100))
 }
-

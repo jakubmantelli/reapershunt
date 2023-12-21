@@ -27,10 +27,11 @@ extension ArcadeGameScene {
         let pauser = SKAction.wait(forDuration: 15.0)
         // Trigger that runs every 15 secounds
         let trigger = SKAction.run{
-            self.lifePerSecond = self.lifePerSecond*0.8
-            
+            if self.secondPerLife > 0.55 {
+                self.secondPerLife -= 0.15
+            }
             ArcadeGameLogic.shared.stopHealthTimer()
-            ArcadeGameLogic.shared.startHealthTimer(self.lifePerSecond)
+            ArcadeGameLogic.shared.startHealthTimer(self.secondPerLife)
             self.removeAction(forKey: "spawner")
             self.repeaterSpawn((self.sinFunc[self.counterSpawn%10] + 1))
             self.counterSpawn += 1

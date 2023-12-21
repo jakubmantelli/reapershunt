@@ -4,6 +4,7 @@
 //
 //  Created by Jakub Mantelli on 13/12/23.
 //
+
 import SpriteKit
 
 class HealthBar: SKSpriteNode {
@@ -17,8 +18,6 @@ class HealthBar: SKSpriteNode {
         
         let size = CGSize(width: maxWidth, height: 5)
         super.init(texture: nil, color: .green, size: size)
-        
-
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,13 +27,9 @@ class HealthBar: SKSpriteNode {
     func updateHealth(health: Int) {
         let healthPercentage = CGFloat(health) / CGFloat(initialPlayerHealth)
         var newWidth = maxWidth * healthPercentage
-        
-        
-    
-           if newWidth > maxWidth {
-               newWidth = maxWidth
-           }
-        
+        if newWidth > maxWidth {
+            newWidth = maxWidth
+        }
         
         // Adjust the health bar's size based on the player's health
         size.width = max(0, newWidth)
@@ -51,5 +46,5 @@ class HealthBar: SKSpriteNode {
         self.color = color
     }
 }
- 
+
 

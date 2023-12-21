@@ -20,11 +20,6 @@ extension ArcadeGameScene {
         } catch {
             print("Error playing background music: \(error.localizedDescription)")
         }
-        
-        
     }
-    
-   
-    
 }
 

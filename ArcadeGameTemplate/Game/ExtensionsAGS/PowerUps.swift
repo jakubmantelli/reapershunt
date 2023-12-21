@@ -21,5 +21,4 @@ extension ArcadeGameScene {
         }
         let increaseSpeedAction = SKAction.sequence([ trigger,pauser,endTrigger ])
         self.run(increaseSpeedAction,withKey: "speedy")}
-    
 }

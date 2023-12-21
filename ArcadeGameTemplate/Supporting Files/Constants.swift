@@ -37,8 +37,6 @@ typealias Instruction = (icon: String, title: String, description: String)
  */
 
 struct MainScreenProperties {
-  
-    
     static let gameInstructions: [Instruction] = [
         (icon: "hand.raised", title: "Collect Souls ", description: "Collect souls that run away from you!"),
         (icon: "hand.tap", title: "Your Health Matters!", description: "Watch out for your health, as your vital orb decreases if you dont harvest souls"),

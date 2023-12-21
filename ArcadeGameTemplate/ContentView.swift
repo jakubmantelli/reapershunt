@@ -12,7 +12,6 @@ import SwiftUI
  **/
 
 struct ContentView: View {
-    
     // The navigation of the app is based on the state of the game.
     // Each state presents a different view on the SwiftUI app structure
     @State var currentGameState: GameState = .mainScreen
@@ -25,10 +24,8 @@ struct ContentView: View {
         switch currentGameState {
         case .mainScreen:
             MainScreenView(currentGameState: $currentGameState)
-            
                 .environmentObject(gameLogic)
         
-            
         case .playing:
             ArcadeGameView(currentGameState: $currentGameState)
                 .environmentObject(gameLogic)

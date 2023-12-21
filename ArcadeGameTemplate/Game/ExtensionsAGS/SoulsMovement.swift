@@ -7,17 +7,15 @@ import SwiftUI
 import SpriteKit
 
 extension ArcadeGameScene {
-    
     // Manages the soul's movement for every case.
     func moveSoulAwayFromPlayer() {
+        /* Se itera sobre todos los nodos con el nombre "soul" */
         self.enumerateChildNodes(withName: "soul") { (node, stop) in
             guard let soul = node as? SKSpriteNode else { return }
-
             let playerPosition = self.skeleton.position
             let soulPosition = soul.position
             let distance = hypot(soulPosition.x - playerPosition.x, soulPosition.y - playerPosition.y)
             let soulKey = "\(soul.position)" // Unique identifier for each soul
-
             switch distance {
                 // It moves directly away from the player.
             case 0..<120:
@@ -38,6 +36,7 @@ extension ArcadeGameScene {
         }
     }
     
+    
     func moveSoulDirectlyAwayFromPlayer(playerPosition: CGPoint, soulPosition: CGPoint, distance: CGFloat, soul: SKSpriteNode) {
         let direction = CGVector(dx: soulPosition.x - playerPosition.x, dy: soulPosition.y - playerPosition.y)
         let normalizedDirection = CGVector(dx: direction.dx / distance, dy: direction.dy / distance)
@@ -57,12 +56,10 @@ extension ArcadeGameScene {
         return CGVector(dx: cos(randomAngle), dy: sin(randomAngle))
     }
     
-
     func updateSoulPosition(soul: SKSpriteNode, potentialPosition: CGPoint, movementVector: CGVector) {
         // Verify if the soul is touching the map limits.
         let isAtHorizontalEdge = potentialPosition.x <= mapBounds.minX || potentialPosition.x >= mapBounds.maxX
         let isAtVerticalEdge = potentialPosition.y <= mapBounds.minY || potentialPosition.y >= mapBounds.maxY
-
         // Update the soul position.
         if !isAtHorizontalEdge {
             soul.position.x += movementVector.dx
@@ -71,5 +68,4 @@ extension ArcadeGameScene {
             soul.position.y += movementVector.dy
         }
     }
-    
 }

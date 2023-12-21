@@ -42,8 +42,6 @@ struct ArcadeGameView: View {
         scene.scaleMode = .fill
         
         return scene
-        
-        
     }
     
     var body: some View {
@@ -54,41 +52,25 @@ struct ArcadeGameView: View {
                 .statusBar(hidden: true)
                 .ignoresSafeArea()
             
-        
-                
-                
-                
-                /**
-                 * UI element showing the current score of the player.
-                 * Remove it if your game is not based on scoring points.
-                 */
-                GameScoreView(score: $gameLogic.currentScore)
+            /**
+             * UI element showing the current score of the player.
+             * Remove it if your game is not based on scoring points.
+             */
+            GameScoreView(score: $gameLogic.currentScore)
             
-       
-            
-          
             if gameLogic.isGameOver {
                 GameOverView(currentGameState: $currentGameState)
             }
-            
         }
-        
-        
-         
- 
-
-    
         .navigationBarHidden(true)
-        
         .onChange(of: gameLogic.isGameOver) { _ in
             if gameLogic.isGameOver  {
                 
                 /** # PRO TIP!
                  * You can experiment by adding other types of animations here before presenting the game over screen.
                  */
-         
-                    self.presentGameOverScreen()
                 
+                self.presentGameOverScreen()
             }
         }
         .onAppear {

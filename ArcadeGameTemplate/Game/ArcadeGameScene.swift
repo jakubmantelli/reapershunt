@@ -12,8 +12,8 @@ class ArcadeGameScene: SKScene {
     /* *** Variables here *** */
     var playerSpeed:CGFloat = 3.0
     var soulCount:Int = 0
-    var sinFunc:[Double] = [0,0.76,1.41,1.85,2,1.85,1.41,0.76,0]
-    var lifePerSecond:Double = 1
+    var sinFunc:[Double] = [0, 0.76, 1.41, 1.85, 2, 2, 1.85, 1.41, 0.76, 0]
+    var secondPerLife:Double = 1
     var counterSpawn:Int = 0
     var gameState: GameState = .playing
     // healthbar
@@ -44,6 +44,8 @@ class ArcadeGameScene: SKScene {
     override func didMove(to view: SKView) {
         //music
         playBackgroundMusic()
+        
+        // Asign the self camera to the camera node variable.
         self.camera = cam
         
         // Set the scale mode to scale to fit the window
@@ -79,9 +81,9 @@ class ArcadeGameScene: SKScene {
         skeleton.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         // Add soul to the scene
+        for _ in 0...11 {
             addSoulToScene()
-            addSoulToScene()
-            addSoulToScene()
+        }
         repeaterSpawn()
         repeaterFixer()
         
@@ -109,7 +111,6 @@ class ArcadeGameScene: SKScene {
                 for i in 0...7 {
                     textures.append(SKTexture(imageNamed:"reaper_run_anim_f\(i)_R"))
                 }
-                /* *** *** *** */
                 walkingAnimationR = SKAction.animate(with: textures, timePerFrame: 0.1)
                 skeleton.run(SKAction.repeatForever(walkingAnimationR),withKey: "walkingAnimationR")
                 skeleton.removeAction(forKey: "walkingAnimationL")
@@ -125,7 +126,6 @@ class ArcadeGameScene: SKScene {
                 for i in 0...7 {
                     textures.append(SKTexture(imageNamed:"reaper_run_anim_f\(i)_L"))
                 }
-                /* *** *** *** */
                 walkingAnimationL = SKAction.animate(with: textures, timePerFrame: 0.1)
                 skeleton.run(SKAction.repeatForever(walkingAnimationL),withKey: "walkingAnimationL")
                 skeleton.removeAction(forKey: "walkingAnimationR")}

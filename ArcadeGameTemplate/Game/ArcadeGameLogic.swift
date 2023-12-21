@@ -18,75 +18,69 @@ class ArcadeGameLogic: ObservableObject {
     @Published var isGameOver: Bool = false
     
     @Published var highScore: Int {
-           didSet {
-               UserDefaults.standard.set(highScore, forKey: "HighScore")
-           }
-       }
-    
-
+        didSet {
+            UserDefaults.standard.set(highScore, forKey: "HighScore")
+        }
+    }
     
     init() {
-          self.highScore = UserDefaults.standard.integer(forKey: "HighScore")
-      }
+        self.highScore = UserDefaults.standard.integer(forKey: "HighScore")
+    }
     
     func setUpGame() {
-         
-
         self.startHealthTimer()
-         self.currentScore = 0
-         self.sessionDuration = 0
-         self.isGameOver = false
-     }
-   
-
+        self.currentScore = 0
+        self.sessionDuration = 0
+        self.isGameOver = false
+    }
+    
     func startHealthTimer(_ time:Double = 1) {
-            healthTimer = Timer.scheduledTimer(withTimeInterval: time, repeats: true) { [weak self] timer in
-                self?.decreasePlayerHealth()
-            }
+        healthTimer = Timer.scheduledTimer(withTimeInterval: time, repeats: true) { [weak self] timer in
+            self?.decreasePlayerHealth()
         }
-
+    }
+    
     func stopHealthTimer() {
         healthTimer?.invalidate()
         healthTimer = nil
     }
     
     func increasePlayerHealth() {
-       playerHealth = (playerHealth > 15 ? 20 : (playerHealth + 5))
-        print(playerHealth)
-        
+        switch self.currentScore {
+        case 0...70:
+            playerHealth = (playerHealth > 15 ? 20 : (playerHealth + 5))
+        case 70...140:
+            playerHealth = (playerHealth > 16 ? 20 : (playerHealth + 4))
+        default:
+            playerHealth = (playerHealth > 17 ? 20 : (playerHealth + 3))
+        }
     }
-
+    
     func decreasePlayerHealth() {
         playerHealth -= 1
         checkGameOver()
     }
     
-
+    
     func checkGameOver() {
         if playerHealth == 0 {
             finishTheGame()
         }
-        print("\(playerHealth) HP")
-        print(isGameOver)
     }
-
+    
     func finishTheGame() {
         stopHealthTimer()
         isGameOver = true
         
     }
-
+    
     func restartGame() {
         playerHealth = 20
         isGameOver = false
         startHealthTimer()
         self.currentScore = 0
-        
-        
     }
     
-    
-  
     // Keeps track of the current score of the player
     @Published var currentScore: Int = 0
     
@@ -104,8 +98,4 @@ class ArcadeGameLogic: ObservableObject {
         sessionDuration += timeIncrement
         // Add any additional session time logic here
     }
-    
-  
-    }
-
-
+}

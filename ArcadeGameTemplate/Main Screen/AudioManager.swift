@@ -2,18 +2,14 @@
 //  AudioManager.swift
 //  ArcadeGameTemplate
 //
-//  Created by Mohammad Solki on 18/12/23.
-//
 
 import SwiftUI
 import AVFoundation
 
 class AudioManager: ObservableObject {
     static let shared = AudioManager()
-    
     private var menuMusicPlayer: AVAudioPlayer?
     private var backgroundMusicPlayer: AVAudioPlayer?
-
     
     @Published var isMusicPlaying: Bool = true {
         didSet {
