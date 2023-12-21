@@ -35,7 +35,7 @@ extension ArcadeGameScene {
             self.removeAction(forKey: "spawner")
             self.repeaterSpawn((self.sinFunc[self.counterSpawn%10] + 1))
             self.counterSpawn += 1
-            self.addPowerUp()
+            self.addPowerUpGodSpeed()
         }
         // ---------------------
         
@@ -80,36 +80,7 @@ extension ArcadeGameScene {
         
     }
     
-    // Function to add Power Up to the scene
-    func addPowerUp() {
-        let power = SKSpriteNode(imageNamed: "GODspeed_flask_anim_f1")
-        power.name = "powerUps" // Asignar un nombre único
-        power.setScale(mapScaleFactor)
-        var powerPosition:CGPoint
-        var distance:CGFloat
-        repeat {
-            powerPosition = CGPoint(x: Int.random(in: -774...774), y: Int.random(in: -548...548))
-            distance = hypot(powerPosition.x - skeleton.position.x, powerPosition.y - skeleton.position.y)
-        } while (distance < 200)
-        power.position = powerPosition
-        power.zPosition = 1
-        self.addChild(power)
-        let appearAnimationR:SKAction
-        var texturesAppear:[SKTexture] = []
-        let idleAnimationR:SKAction
-        var texturesIdle:[SKTexture] = []
-        for i in 0...3 {
-            texturesAppear.append(SKTexture(imageNamed:"GODspeed_flask_anim_f\(i)"))
-        }
-        appearAnimationR = SKAction.animate(with: texturesAppear, timePerFrame: 0.1)
-        for i in 0...3 {
-            texturesIdle.append(SKTexture(imageNamed:"GODspeed_flask_anim_f\(i)"))
-        }
-        idleAnimationR = SKAction.animate(with: texturesIdle, timePerFrame: 0.2)
-        power.run(appearAnimationR){
-        power.run(SKAction.repeatForever(idleAnimationR),withKey: "idleAnimation")}
-        
-    }
+
     
     func incrementQuadrant(){
         self.quadrantIndex == 5 ? (self.quadrantIndex = 0) : (self.quadrantIndex += 1)
