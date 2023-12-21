@@ -43,8 +43,8 @@ extension ArcadeGameScene {
         
     }
     
-    func increaseSpeed(_ spid:Double = 10){
-        let pauser = SKAction.wait(forDuration: 2)
+    func increaseSpeed(_ spid:Double = 10, _ durationTime: Double = 8){
+        let pauser = SKAction.wait(forDuration: durationTime)
         let trigger = SKAction.run{
             self.playerSpeed += spid
         }
