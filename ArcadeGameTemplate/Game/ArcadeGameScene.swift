@@ -79,9 +79,9 @@ class ArcadeGameScene: SKScene {
         skeleton.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         // Add soul to the scene
+        for _ in 0...11 {
             addSoulToScene()
-            addSoulToScene()
-            addSoulToScene()
+        }
         repeaterSpawn()
         repeaterFixer()
         
