@@ -13,7 +13,7 @@ class ArcadeGameScene: SKScene {
     var listOfPowerUps:[String] = ["powerUpGodMode","powerUpSpeed"]
     var playerSpeed:CGFloat = 3.0
     var soulCount:Int = 0
-    var sinFunc:[Double] = [0,0.76,1.41,1.85,2,1.85,1.41,0.76,0]
+    var sinFunc:[Double] = [0,0.76,1.41,1.85,2,2,1.85,1.41,0.76,0]
     var lifePerSecond:Double = 1
     var counterSpawn:Int = 0
     var gameState: GameState = .playing
