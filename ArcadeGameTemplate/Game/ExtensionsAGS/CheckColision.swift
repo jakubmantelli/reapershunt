@@ -93,24 +93,26 @@ extension ArcadeGameScene {
         /* POWER UPS COLLISION */
         // Arreglo para almacenar los power ups consumidos.
         var hitPowerUps: [SKSpriteNode] = []
+        
+        for powerUpName in self.listOfPowerUps{
         // Iteramos sobre todos los power ups.
-        enumerateChildNodes(withName:"powerUpGodSpeed") {node, _  in
+        enumerateChildNodes(withName:powerUpName) {node, _  in
             // Hacemos un casting explícito del nodo recibido y lo almacenamos en la constante power.
             let power = node as! SKSpriteNode
             // Revisamos la colisión del jugador con el power up, de manera más directa.
             if CGRectIntersectsRect(power.frame, self.skeleton.frame) {
                 // Añadimos el power up consumido al arreglo hitPowerUps
                 hitPowerUps.append(power)
-                // Llamamos a la función que incrementa la velocidad.
-                self.increaseSpeed()
+                // Llamamos a la función que ativa o powerUp.
+                self.powerUpEffect(powerUpName: powerUpName)
             }
         }
-        
         // Después, eliminamos todos las acciones del power up consumido.
         for power in hitPowerUps{
             power.removeAllActions()
             power.removeFromParent()
         }
+    }
         
     }
 }

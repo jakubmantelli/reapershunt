@@ -18,23 +18,19 @@ extension ArcadeGameScene {
         let pauseThenTrigger = SKAction.sequence([ pauser, trigger ])
         let repeatForever = SKAction.repeatForever(pauseThenTrigger)
         self.run( repeatForever ,withKey: "spawner")}
-    
-    func powerUpSpawn(){
-        
-    }
-    
     func repeaterFixer(){
         let pauser = SKAction.wait(forDuration: 15.0)
         // Trigger that runs every 15 secounds
         let trigger = SKAction.run{
-            self.lifePerSecond = self.lifePerSecond*0.8
+            self.lifePerSecond = self.lifePerSecond > 0.4 ? self.lifePerSecond - 0.15 : self.lifePerSecond
             
             ArcadeGameLogic.shared.stopHealthTimer()
             ArcadeGameLogic.shared.startHealthTimer(self.lifePerSecond)
             self.removeAction(forKey: "spawner")
             self.repeaterSpawn((self.sinFunc[self.counterSpawn%10] + 1))
             self.counterSpawn += 1
-            self.addPowerUpGodSpeed()
+            self.spawnRandomPowerUp()
+            
         }
         // ---------------------
         
@@ -80,8 +76,27 @@ extension ArcadeGameScene {
     }
     
 
+    //Aux functions
     
     func incrementQuadrant(){
         self.quadrantIndex == 5 ? (self.quadrantIndex = 0) : (self.quadrantIndex += 1)
     }
+    
+    //Function to add random power up to the scene when called
+    func spawnRandomPowerUp(){
+        // this array controls the probabilities by the proportion of a powerUps name (more -> more likely to spawn)
+        let arrayOfProbabilities:[String] = ["powerUpGodMode","powerUpSpeed","powerUpSpeed","powerUpSpeed","powerUpSpeed","powerUpSpeed","powerUpSpeed","","",""]
+        let powerUpToSpawn:String = arrayOfProbabilities.randomElement()!
+        switch powerUpToSpawn{
+        case "powerUpGodMode":
+            self.addPowerUpGodMode()
+        case "powerUpSpeed":
+            self.addPowerUpSpeed()
+        case "":
+            print("no spawn")
+        default:
+            print("Issue with function spawnRandomPowerUp on Spawn file")
+        }
+    }
+    
 }
