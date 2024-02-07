@@ -39,7 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		271CB24D27D6569700615359 /* ArcadeGameTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcadeGameTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		271CB24D27D6569700615359 /* Reaper's Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reaper's Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		271CB25027D6569700615359 /* ArcadeGameTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeGameTemplateApp.swift; sourceTree = "<group>"; };
 		271CB25227D6569700615359 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		271CB25427D6569900615359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		271CB24E27D6569700615359 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				271CB24D27D6569700615359 /* ArcadeGameTemplate.app */,
+				271CB24D27D6569700615359 /* Reaper's Hunt.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,9 +185,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		271CB24C27D6569700615359 /* ArcadeGameTemplate */ = {
+		271CB24C27D6569700615359 /* Reaper's Hunt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 271CB25B27D6569900615359 /* Build configuration list for PBXNativeTarget "ArcadeGameTemplate" */;
+			buildConfigurationList = 271CB25B27D6569900615359 /* Build configuration list for PBXNativeTarget "Reaper's Hunt" */;
 			buildPhases = (
 				271CB24927D6569700615359 /* Sources */,
 				271CB24A27D6569700615359 /* Frameworks */,
@@ -197,9 +197,9 @@
 			);
 			dependencies = (
 			);
-			name = ArcadeGameTemplate;
+			name = "Reaper's Hunt";
 			productName = ArcadeGameTemplate;
-			productReference = 271CB24D27D6569700615359 /* ArcadeGameTemplate.app */;
+			productReference = 271CB24D27D6569700615359 /* Reaper's Hunt.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +217,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 271CB24827D6569700615359 /* Build configuration list for PBXProject "ArcadeGameTemplate" */;
+			buildConfigurationList = 271CB24827D6569700615359 /* Build configuration list for PBXProject "Reaper's Hunt" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -230,7 +230,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				271CB24C27D6569700615359 /* ArcadeGameTemplate */,
+				271CB24C27D6569700615359 /* Reaper's Hunt */,
 			);
 		};
 /* End PBXProject section */
@@ -409,7 +409,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ArcadeGameTemplate/Preview Content\"";
-				DEVELOPMENT_TEAM = WTLRY9GBMJ;
+				DEVELOPMENT_TEAM = 9GP6UM8QNA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArcadeGameTemplate/Info.plist;
@@ -427,7 +427,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mtorres.reaper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luminous.reapershunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -447,7 +447,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ArcadeGameTemplate/Preview Content\"";
-				DEVELOPMENT_TEAM = WTLRY9GBMJ;
+				DEVELOPMENT_TEAM = 9GP6UM8QNA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArcadeGameTemplate/Info.plist;
@@ -465,7 +465,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mtorres.reaper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luminous.reapershunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -480,7 +480,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		271CB24827D6569700615359 /* Build configuration list for PBXProject "ArcadeGameTemplate" */ = {
+		271CB24827D6569700615359 /* Build configuration list for PBXProject "Reaper's Hunt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				271CB25927D6569900615359 /* Debug */,
@@ -489,7 +489,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		271CB25B27D6569900615359 /* Build configuration list for PBXNativeTarget "ArcadeGameTemplate" */ = {
+		271CB25B27D6569900615359 /* Build configuration list for PBXNativeTarget "Reaper's Hunt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				271CB25C27D6569900615359 /* Debug */,
