@@ -43,6 +43,7 @@ extension ArcadeGameScene {
         let normalizedDirection = CGVector(dx: direction.dx / distance, dy: direction.dy / distance)
         let velocity = 1.0 // Adjusted speed
         let movement = CGVector(dx: normalizedDirection.dx * velocity, dy: normalizedDirection.dy * velocity)
+        if movement.dx < 0 {self.animatingSoulL(soul: soul)} else {self.animatingSoulR(soul: soul)}
         updateSoulPosition(soul: soul, potentialPosition: CGPoint(x: soulPosition.x + movement.dx, y: soulPosition.y + movement.dy), movementVector: movement)
     }
     

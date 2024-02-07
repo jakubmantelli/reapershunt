@@ -39,7 +39,32 @@ extension ArcadeGameScene {
         self.run( repeatForever ,withKey: "life")
     }
     
-    
+    func animatingSoulR(soul:SKSpriteNode) {
+        
+        if soul.action(forKey: "idleAnimationL") != nil{
+            let idleAnimationR:SKAction
+            var texturesIdle:[SKTexture] = []
+            for i in 0...4 {
+                texturesIdle.append(SKTexture(imageNamed:"soul_idle_anim_f\(i)_R"))
+            }
+            idleAnimationR = SKAction.animate(with: texturesIdle, timePerFrame: 0.2)
+            
+            soul.removeAllActions()
+            soul.run(SKAction.repeatForever(idleAnimationR),withKey: "idleAnimationR")}
+    }    
+    func animatingSoulL(soul:SKSpriteNode) {
+        
+        if soul.action(forKey: "idleAnimationR") != nil{
+            let idleAnimationR:SKAction
+            var texturesIdle:[SKTexture] = []
+            for i in 0...4 {
+                texturesIdle.append(SKTexture(imageNamed:"soul_idle_anim_f\(i)_L"))
+            }
+            idleAnimationR = SKAction.animate(with: texturesIdle, timePerFrame: 0.2)
+            
+            soul.removeAllActions()
+            soul.run(SKAction.repeatForever(idleAnimationR),withKey: "idleAnimationL")}
+    }
     func addSoulToScene() {
         // We put the soul into the scene
         self.soulCount += 1
@@ -71,7 +96,7 @@ extension ArcadeGameScene {
         }
         idleAnimationR = SKAction.animate(with: texturesIdle, timePerFrame: 0.2)
         soul.run(appearAnimationR){
-            soul.run(SKAction.repeatForever(idleAnimationR),withKey: "idleAnimation")}
+            soul.run(SKAction.repeatForever(idleAnimationR),withKey: "idleAnimationL")}
         
     }
     
