@@ -14,6 +14,7 @@ import SpriteKit
  *  - Different effects for transitions in and out of the game scene
  **/
 
+
 struct ArcadeGameView: View {
     
     /**

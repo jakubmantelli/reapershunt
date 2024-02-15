@@ -7,6 +7,17 @@ import SpriteKit
 import SwiftUI
 import AVFoundation
 
+class SKTextureA :SKTexture {
+    override var filteringMode: SKTextureFilteringMode {
+        
+        get {
+            return SKTextureFilteringMode.nearest
+        }
+        set {
+            super.filteringMode = newValue
+        }
+        }
+}
 class ArcadeGameScene: SKScene {
     
     /* *** Variables here *** */
@@ -51,7 +62,7 @@ class ArcadeGameScene: SKScene {
         self.scaleMode = .aspectFill
         
         // Create the map, centered in scene
-        let map = SKSpriteNode(imageNamed: "Dungeon_Mapv2")
+        let map = SKSpriteNode(texture:SKTextureA(imageNamed: "Dungeon_Mapv2"))
         map.position = CGPoint(x: -scaledWidth/2, y: -scaledHeight/2)
         map.zPosition = -2
         map.setScale(mapScaleFactor)
@@ -61,7 +72,7 @@ class ArcadeGameScene: SKScene {
         let skeletonAnimation:SKAction
         var textures:[SKTexture] = []
         for i in 0...4 {
-            textures.append(SKTexture(imageNamed:"reaper_idle_anim_f\(i)_R"))
+            textures.append(SKTextureA(imageNamed:"reaper_idle_anim_f\(i)_R"))
         }
         skeletonAnimation = SKAction.animate(with: textures, timePerFrame: 0.2)
         // Create skeleton node
@@ -108,7 +119,7 @@ class ArcadeGameScene: SKScene {
                 let walkingAnimationR:SKAction
                 var textures:[SKTexture] = []
                 for i in 0...7 {
-                    textures.append(SKTexture(imageNamed:"reaper_run_anim_f\(i)_R"))
+                    textures.append(SKTextureA(imageNamed:"reaper_run_anim_f\(i)_R"))
                 }
                 /* *** *** *** */
                 walkingAnimationR = SKAction.animate(with: textures, timePerFrame: 0.1)
@@ -124,7 +135,7 @@ class ArcadeGameScene: SKScene {
                 let walkingAnimationL:SKAction
                 var textures:[SKTexture] = []
                 for i in 0...7 {
-                    textures.append(SKTexture(imageNamed:"reaper_run_anim_f\(i)_L"))
+                    textures.append(SKTextureA(imageNamed:"reaper_run_anim_f\(i)_L"))
                 }
                 /* *** *** *** */
                 walkingAnimationL = SKAction.animate(with: textures, timePerFrame: 0.1)
@@ -142,7 +153,7 @@ class ArcadeGameScene: SKScene {
             let idleAnimationR:SKAction
             var textures:[SKTexture] = []
             for i in 0...4 {
-                textures.append(SKTexture(imageNamed:"reaper_idle_anim_f\(i)_L"))
+                textures.append(SKTextureA(imageNamed:"reaper_idle_anim_f\(i)_L"))
             }
             idleAnimationR = SKAction.animate(with: textures, timePerFrame: 0.2)
             skeleton.run(SKAction.repeatForever(idleAnimationR),withKey: "idleAnimation")
@@ -152,7 +163,7 @@ class ArcadeGameScene: SKScene {
             let idleAnimationR:SKAction
             var textures:[SKTexture] = []
             for i in 0...4 {
-                textures.append(SKTexture(imageNamed:"reaper_idle_anim_f\(i)_R"))
+                textures.append(SKTextureA(imageNamed:"reaper_idle_anim_f\(i)_R"))
             }
             idleAnimationR = SKAction.animate(with: textures, timePerFrame: 0.2)
             skeleton.run(SKAction.repeatForever(idleAnimationR),withKey: "idleAnimation")

@@ -34,7 +34,7 @@ extension ArcadeGameScene {
             var texturesDead: [SKTexture] = []
             // Agregamos las texturas que tenemos en assets al arreglo que creamos para la animación.
             for i in 0...4 {
-                texturesDead.append(SKTexture(imageNamed: "soul_disappear_anim_f\(i)_L"))
+                texturesDead.append(SKTextureA(imageNamed: "soul_disappear_anim_f\(i)_L"))
             }
             // Llamamos a la animación usando el arreglo de las texturas y un método de SKAction.
             deadAnimationR = SKAction.animate(with: texturesDead, timePerFrame: 0.15)
@@ -50,7 +50,7 @@ extension ArcadeGameScene {
                     var textures: [SKTexture] = []
                     // Añadimos las texturas al arreglo de la animación que mira a la derecha.
                     for i in 0...9 {
-                        textures.append(SKTexture(imageNamed:"reaper_attack_anim_f\(i)_R"))
+                        textures.append(SKTextureA(imageNamed:"reaper_attack_anim_f\(i)_R"))
                     }
                     // Activamos la animación.
                     attackAnimation = SKAction.animate(with: textures, timePerFrame: 0.1,resize: true, restore: true)
@@ -66,7 +66,7 @@ extension ArcadeGameScene {
                     let attackAnimation: SKAction
                     var textures:[SKTexture] = []
                     for i in 0...9 {
-                        textures.append(SKTexture(imageNamed:"reaper_attack_anim_f\(i)_L"))
+                        textures.append(SKTextureA(imageNamed:"reaper_attack_anim_f\(i)_L"))
                     }
                     attackAnimation = SKAction.animate(with: textures, timePerFrame: 0.1,resize:true, restore: true)
                     skeleton.run(attackAnimation,withKey: "attackAnimation")

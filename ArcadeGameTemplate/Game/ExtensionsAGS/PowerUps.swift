@@ -30,7 +30,7 @@ extension ArcadeGameScene {
         let idleAnimation:SKAction
         var texturesIdle:[SKTexture] = []
         for i in 0...3 {
-            texturesIdle.append(SKTexture(imageNamed:"speed_flask_anim_f\(i)"))
+            texturesIdle.append(SKTextureA(imageNamed:"speed_flask_anim_f\(i)"))
         }
         idleAnimation = SKAction.animate(with: texturesIdle, timePerFrame: 0.2)
         power.run(SKAction.repeatForever(idleAnimation),withKey: "idleAnimation")
@@ -53,7 +53,7 @@ extension ArcadeGameScene {
         let idleAnimation:SKAction
         var texturesIdle:[SKTexture] = []
         for i in 0...3 {
-            texturesIdle.append(SKTexture(imageNamed:"GODspeed_flask_anim_f\(i)"))
+            texturesIdle.append(SKTextureA(imageNamed:"GODspeed_flask_anim_f\(i)"))
         }
         idleAnimation = SKAction.animate(with: texturesIdle, timePerFrame: 0.2)
         power.run(SKAction.repeatForever(idleAnimation),withKey: "idleAnimation")

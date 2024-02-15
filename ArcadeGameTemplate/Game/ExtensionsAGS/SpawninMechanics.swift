@@ -30,6 +30,7 @@ extension ArcadeGameScene {
             self.repeaterSpawn((self.sinFunc[self.counterSpawn%10] + 1))
             self.counterSpawn += 1
             self.spawnRandomPowerUp()
+            print(self.lifePerSecond)
             
         }
         // ---------------------
@@ -45,7 +46,7 @@ extension ArcadeGameScene {
             let idleAnimationR:SKAction
             var texturesIdle:[SKTexture] = []
             for i in 0...4 {
-                texturesIdle.append(SKTexture(imageNamed:"soul_idle_anim_f\(i)_R"))
+                texturesIdle.append(SKTextureA(imageNamed:"soul_idle_anim_f\(i)_R"))
             }
             idleAnimationR = SKAction.animate(with: texturesIdle, timePerFrame: 0.2)
             
@@ -58,7 +59,7 @@ extension ArcadeGameScene {
             let idleAnimationR:SKAction
             var texturesIdle:[SKTexture] = []
             for i in 0...4 {
-                texturesIdle.append(SKTexture(imageNamed:"soul_idle_anim_f\(i)_L"))
+                texturesIdle.append(SKTextureA(imageNamed:"soul_idle_anim_f\(i)_L"))
             }
             idleAnimationR = SKAction.animate(with: texturesIdle, timePerFrame: 0.2)
             
@@ -86,13 +87,13 @@ extension ArcadeGameScene {
         let idleAnimationR:SKAction
         var texturesIdle:[SKTexture] = []
         for i in 0...4 {
-            texturesAppear.append(SKTexture(imageNamed:"soul_appear_anim_f\(i)_L"))
+            texturesAppear.append(SKTextureA(imageNamed:"soul_appear_anim_f\(i)_L"))
         }
         appearAnimationR = SKAction.animate(with: texturesAppear, timePerFrame: 0.1)
         
         
         for i in 0...4 {
-            texturesIdle.append(SKTexture(imageNamed:"soul_idle_anim_f\(i)_L"))
+            texturesIdle.append(SKTextureA(imageNamed:"soul_idle_anim_f\(i)_L"))
         }
         idleAnimationR = SKAction.animate(with: texturesIdle, timePerFrame: 0.2)
         soul.run(appearAnimationR){
